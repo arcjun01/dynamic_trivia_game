@@ -59,10 +59,11 @@ const container = document.getElementById("trivia-container");
 function showQuestion() {
     container.innerHTML = "";
 
-    if (currentQuestionIndex < questions.length) {
-        showResults();
-        return;
-    }
+if (currentQuestionIndex >= questions.length) {
+    showResults();
+    return;
+}
+
 
 const q = questions[currentQuestionIndex];
 
@@ -92,7 +93,7 @@ function checkAnswer(answer) {
 }
 
 function showResults() {
-  gameContainer.innerHTML = `
+  container.innerHTML = `
     <h2>Game Over!</h2>
     <p>You scored ${score} out of ${questions.length}</p>
     <button onclick="restartGame()">Play Again</button>
