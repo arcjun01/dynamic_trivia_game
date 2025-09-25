@@ -1,54 +1,60 @@
 const questions = [
 {
+    progress: "Question 1 of 5",
     question: "What is a group of cats called?",
     answers: ["clowder", "glaring", "pounce", "meow"],
     correct: "clowder"
 },
 {
+    progress: "Question 2 of 5",
     question: "Which has the thickest fur of any mammal?",
     answers:["polar bear", "sea otter", "arctic fox", "walrus"],
     correct: "sea otter"
 },
 {
+    progress: "Question 3 of 5",
     question: "The age of a lion can be determined by its … ?",
     answers: ["teeth", "mane", "nose", "paws"],
     correct: "nose"
 },
 {
+    progress: "Question 4 of 5",
     question: "How far away can a wolf smell its prey?",
     answers: ["half a mile", "one mile", "almost two miles", "five miles"],
     correct: "almost two miles"
 },
 {
+    progress: "Question 5 of 5",
     question: "What is the deadliest creature in the world?",
     answers: ["box jellyfish", "mosquito", "saltwater crocodile", "blue-ringed octopus"],
     correct: "mosquito"
-},
-{
-    question: "What is the closest living relative to the T-rex?",
-    answers: ["ostrich", "alligator", "chicken", "eagle"],
-    correct: "chicken"
-},
-{
-    question: "What is a male duck called?",
-    answers: ["drake", "stag", "bull", "boar"],
-    correct: "drake"
-},
-{
-    question: "What percentage of baby animals are raised by both parents?",
-    answers: ["75%", "25%", "50%", "3%"],
-    correct: "3%"
-},
-{
-    question: "What is the polar bear's skin color?",
-    answers: ["white", "black", "pink", "brown"],
-    correct: "black"
-},
-{
-    question: "Which animal is known for spending 80% of its day sleeping?",
-    answers: ["sloth", "koala bear", "lion", "panda"],
-    correct: "koala bear"
 }
+// },
+// {
+//     question: "What is the closest living relative to the T-rex?",
+//     answers: ["ostrich", "alligator", "chicken", "eagle"],
+//     correct: "chicken"
+// },
+// {
+//     question: "What is a male duck called?",
+//     answers: ["drake", "stag", "bull", "boar"],
+//     correct: "drake"
+// },
+// {
+//     question: "What percentage of baby animals are raised by both parents?",
+//     answers: ["75%", "25%", "50%", "3%"],
+//     correct: "3%"
+// },
+// {
+//     question: "What is the polar bear's skin color?",
+//     answers: ["white", "black", "pink", "brown"],
+//     correct: "black"
+// },
+// {
+//     question: "Which animal is known for spending 80% of its day sleeping?",
+//     answers: ["sloth", "koala bear", "lion", "panda"],
+//     correct: "koala bear"
+// }
 ];
 
 
@@ -56,7 +62,13 @@ const questions = [
 let currentQuestionIndex = 0;
 let score = 0;
 
+// Current question and selecting answers
 const container = document.getElementById("trivia-container");
+
+function updateProgress() {
+    const progressEl = document.getElementById("progress");
+
+}
 
 function showQuestion() {
     container.innerHTML = "";
