@@ -85,7 +85,7 @@ const q = questions[currentQuestionIndex];
   questionEl.textContent = q.question;
   container.appendChild(questionEl);
 
-  // Display answers
+// Display answers
   q.answers.forEach(answer => {
     const button = document.createElement("button");
     button.textContent = answer;
@@ -94,7 +94,7 @@ const q = questions[currentQuestionIndex];
   });
 }
 
-// Checks answer and updates score
+// Function that checks answer and updates score
 function checkAnswer(answer) {
   const q = questions[currentQuestionIndex];
   if (answer === q.correct) {
@@ -104,7 +104,7 @@ function checkAnswer(answer) {
     alert("Wrong! Correct answer was: " + q.correct);
   }
 
-  // Move to the next question
+// Move to the next question
   currentQuestionIndex++; 
   showQuestion();
 }
