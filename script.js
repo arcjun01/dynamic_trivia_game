@@ -51,6 +51,8 @@ const questions = [
 }
 ];
 
+
+// The state of the game
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -64,7 +66,7 @@ if (currentQuestionIndex >= questions.length) {
     return;
 }
 
-
+// This displays the current question and the answers
 const q = questions[currentQuestionIndex];
 
   const questionEl = document.createElement("h2");
@@ -79,6 +81,7 @@ const q = questions[currentQuestionIndex];
   });
 }
 
+// Checks answer and updates score
 function checkAnswer(answer) {
   const q = questions[currentQuestionIndex];
   if (answer === q.correct) {
@@ -88,10 +91,12 @@ function checkAnswer(answer) {
     alert("Wrong! Correct answer was: " + q.correct);
   }
 
-  currentQuestionIndex++;
+  // Move to the next question
+  currentQuestionIndex++; 
   showQuestion();
 }
 
+// Final results and a button option to restart
 function showResults() {
   container.innerHTML = `
     <h2>Game Over!</h2>
@@ -100,10 +105,12 @@ function showResults() {
   `;
 }
 
+// Restart the game
 function restartGame() {
   currentQuestionIndex = 0;
   score = 0;
   showQuestion();
 }
 
+// Restart the game when reloaded
 showQuestion();
