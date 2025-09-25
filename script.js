@@ -65,11 +65,6 @@ let score = 0;
 // Current question and selecting answers
 const container = document.getElementById("trivia-container");
 
-function updateProgress() {
-    const progressEl = document.getElementById("progress");
-
-}
-
 function showQuestion() {
     container.innerHTML = "";
 
@@ -78,13 +73,19 @@ if (currentQuestionIndex >= questions.length) {
     return;
 }
 
-// This displays the current question and the answers
+// Display current question
 const q = questions[currentQuestionIndex];
+
+// Display progress
+  const progressEl = document.createElement("p");
+  progressEl.textContent = `Question ${currentQuestionIndex + 1} of 5`;
+  container.appendChild(progressEl);
 
   const questionEl = document.createElement("h2");
   questionEl.textContent = q.question;
   container.appendChild(questionEl);
 
+  // Display answers
   q.answers.forEach(answer => {
     const button = document.createElement("button");
     button.textContent = answer;
